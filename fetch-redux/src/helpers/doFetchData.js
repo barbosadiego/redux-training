@@ -5,3 +5,5 @@ const doFecthData = async (endpoint) => {
   const res = await data.json();
   return res;
 };
+
+export default doFecthData;
