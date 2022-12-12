@@ -4,7 +4,15 @@ import doFecthData from '../helpers/doFetchData';
 const Home = () => {
   const [product, setProduct] = useState(null);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    async function getProduct() {
+      setProduct(await doFecthData('products/1'));
+    }
+
+    getProduct();
+  }, []);
+
+  console.log(product);
 
   if (!product) return <p>No items to show</p>;
 
