@@ -12,8 +12,6 @@ const Home = () => {
     getProduct();
   }, []);
 
-  console.log(product);
-
   if (!product) return <p>No items to show</p>;
 
   return (
@@ -21,6 +19,11 @@ const Home = () => {
       <h1>{product.title}</h1>
       <h2>{product.price}</h2>
       <p>{product.description}</p>
+      <div>
+        {product.images.map((item, index) => (
+          <img src={item} alt={product.title} key={index} />
+        ))}
+      </div>
     </>
   );
 };
